@@ -12,15 +12,13 @@ jobs:
         id: create-class-diagram
         uses: smeghead/php-class-diagram-gh-action@v0
         with:
-          src-directory: src
-          output-path: diagram.png
+          target-path: src
+          output-path: class-diagram.png
+          options: --disable-class-properties --disable-class-methods
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: diagram.png
-          path: diagram.png
+          name: Class_Diagram
+          path: class-diagram.png
           retention-days: 5
-
-      - name: Get the output time
-        run: echo "The time was ${{ steps.create-class-diagram.outputs.time }}"
