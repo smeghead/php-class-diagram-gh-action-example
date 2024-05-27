@@ -10,7 +10,7 @@ jobs:
 
       - name: Create class diagram
         id: create-class-diagram
-        uses: smeghead/php-class-diagram-gh-action
+        uses: smeghead/php-class-diagram-gh-action@v0
         with:
           src-directory: src
           output-path: diagram.png
