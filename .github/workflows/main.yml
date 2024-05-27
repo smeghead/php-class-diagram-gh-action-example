@@ -15,5 +15,12 @@ jobs:
           src-directory: src
           output-path: diagram.png
 
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: diagram.png
+          path: diagram.png
+          retention-days: 5
+
       - name: Get the output time
         run: echo "The time was ${{ steps.create-class-diagram.outputs.time }}"
